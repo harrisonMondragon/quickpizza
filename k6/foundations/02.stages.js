@@ -4,6 +4,7 @@ import { check, sleep } from "k6";
 const BASE_URL = __ENV.BASE_URL || 'http://localhost:3333';
 
 export const options = {
+  // target number of users (concurrent) with time duration
   stages: [
     { duration: '5s', target: 5 },
     { duration: '10s', target: 5 },
