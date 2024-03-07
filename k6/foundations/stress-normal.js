@@ -1,14 +1,11 @@
 import http from "k6/http";
 import { check, sleep } from "k6";
+import { StressStages } from "./lib/load-options.js"
 
 const BASE_URL = __ENV.BASE_URL || "http://localhost:3333";
 
 export const options = {
-    stages: [
-        { duration: "8m", target: 200 },
-        { duration: "30m", target: 200 },
-        { duration: "5m", target: 0 },
-    ],
+    stages: StressStages
 };
 
 export default function () {

@@ -11,6 +11,18 @@ export const StressStages = [
   { duration: "5s", target: 0 },
 ];
 
+export const StressStagesTwo = [
+  { duration: "5s", target: 10 },
+  { duration: "10s", target: 10 },
+  { duration: "5s", target: 0 },
+];
+
+export const StressStagesThree = [
+  { duration: "5s", target: 15 },
+  { duration: "10s", target: 15 },
+  { duration: "5s", target: 0 },
+];
+
 export const SpikeStages = [
   { duration: "30s", target: 100 },
   { duration: "2m", target: 100 },
