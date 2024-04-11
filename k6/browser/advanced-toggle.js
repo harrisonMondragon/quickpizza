@@ -31,7 +31,7 @@ export default async function () {
     page.waitForTimeout(500);
     page.screenshot({ path: "Screenshots/advanced-screenshot.png" });
     check(page, {
-      recommendation: page.locator("label").textContent() == "Max Calories per Slice",
+      "Max calories text": page.locator("label").textContent() == "Max Calories per Slice",
     });  // confirm that the advanced pizza options are visable
   } finally {
     page.close();

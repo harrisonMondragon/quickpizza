@@ -30,12 +30,12 @@ export default async function () {
     await page.locator('//span[. = "Advanced"]').click(); // toggle the advanced button
     page.waitForTimeout(500);
 
-    await page.locator('//label[. = "Must be vegetarian"]').click(); // toggle the advanced button
+    await page.locator('//label[. = "Must be vegetarian"]').click(); // toggle the vegetarian option
     page.waitForTimeout(500);
 
     page.screenshot({ path: "Screenshots/vegetarian-screenshot.png" });
     check(page, {
-      recommendation: page.locator("label").textContent() == "Max Calories per Slice",
+      "Max calories text": page.locator("label").textContent() == "Max Calories per Slice",
     });  // confirm that the advanced pizza options are visable
   } finally {
     page.close();
