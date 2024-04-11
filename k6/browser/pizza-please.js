@@ -29,7 +29,7 @@ export default async function () {
 
     await page.locator('//button[. = "Pizza, Please!"]').click(); // select matching element and automate generating pizza
     page.waitForTimeout(500);
-    page.screenshot({ path: "screenshot.png" });
+    page.screenshot({ path: "Screenshots/generate-pizza-screenshot.png" });
     check(page, {
       recommendation: page.locator("div#recommendations").textContent() != "",
     });  // confirm that the pizza recommendations are visable on the page
