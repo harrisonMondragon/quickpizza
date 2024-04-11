@@ -42,7 +42,7 @@ export const SmokeOptions = {
 };
 
 export const SpikeThreshold = [
-    { duration: "10s", target: 450 },
-    { duration: "30s", target: 450 },
+    { duration: "10s", target: 400 },
+    { duration: "30s", target: 400 },
     { duration: "10s", target: 0 },
 ];
