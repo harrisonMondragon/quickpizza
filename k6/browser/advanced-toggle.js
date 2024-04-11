@@ -29,7 +29,7 @@ export default async function () {
 
     await page.locator('//span[. = "Advanced"]').click(); // toggle the advanced button
     page.waitForTimeout(500);
-    page.screenshot({ path: "Basic/advanced-screenshot.png" });
+    page.screenshot({ path: "Screenshots/advanced-screenshot.png" });
     check(page, {
       recommendation: page.locator("label").textContent() == "Max Calories per Slice",
     });  // confirm that the advanced pizza options are visable
