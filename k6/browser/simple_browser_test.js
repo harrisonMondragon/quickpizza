@@ -17,22 +17,22 @@ export const options = {
 };
 
 export default async function () {
-  const page = browser.newPage();
+  const page = browser.newPage(); // open new page
 
   try {
-    await page.goto(BASE_URL);
+    await page.goto(BASE_URL); 
     check(page, {
       header:
         page.locator("h1").textContent() ==
         "Looking to break out of your pizza routine?",
     });
 
-    await page.locator('//button[. = "Pizza, Please!"]').click();
+    await page.locator('//button[. = "Pizza, Please!"]').click(); // select matching element and automate generating pizza
     page.waitForTimeout(500);
     page.screenshot({ path: "screenshot.png" });
     check(page, {
       recommendation: page.locator("div#recommendations").textContent() != "",
-    });
+    });  // confirm that the pizza recommendations are visable on the page
   } finally {
     page.close();
   }
