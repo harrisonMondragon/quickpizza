@@ -15,10 +15,14 @@ export const options = {
     },
   },
   thresholds: {
-    browser_web_vital_fcp: ["p(95) < 1000"],
-    browser_web_vital_lcp: ["p(95) < 2000"],
+    browser_web_vital_fcp: ["p(95) < 1800"],
+    browser_web_vital_lcp: ["p(95) < 2500"],
+    browser_web_vital_cls: ["p(95) < 0.1"]
   }
 };
+// fcp - Measures the time it takes for the browser to render the first DOM element on the page. To provide a good user experience, sites must have an FCP of 1.8 seconds or less.
+// lcp - Measures a page's loading performance. To provide a good user experience, sites should strive to have LCP of 2.5 seconds or less
+// cls - Measures a page's visual stability. To provide a good user experience, a site must have a CLS score of 0.1 or less.
 
 export default async function () {
   const page = browser.newPage();
